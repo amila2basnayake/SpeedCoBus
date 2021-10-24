@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "926908d0-bf4b-4a05-93c9-4fc899e0b4e0",
+		"name": "SpeedCoBusSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "bus",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\":\"ABC-123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/bus"
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/bus/ABC-123"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Line",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"AX12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/line"
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "stop",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"code\":\"ASX\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/stop"
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/stop/ASX"
+					},
+					"response": []
+				},
+				{
+					"name": "ADD_STOP_TO_ROUTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/stop/ASX/route/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "route",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"sss\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/route"
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/route/sss"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "schedule",
+			"item": [
+				{
+					"name": "schedule",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"busDto\":{\n    \"id\": 1,\n    \"code\": \"ABC123\",\n    \"scheduleDtos\": []\n},\n    \"lineDto\":{\n    \"id\": 2,\n    \"name\": \"AX32\",\n    \"routeDtos\": null,\n    \"scheduleDtos\": []\n},\n    \"startDateTime\":\"2019-02-03 10:08:02\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/schedule"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
