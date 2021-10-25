@@ -1,5 +1,3 @@
-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
-
 
 # Project Title
 
@@ -33,10 +31,5 @@ jdbc:h2:mem:SpeedCoBus
 ```
 *You can change or view user name and password by application.property file in project resources.
 
-
-    /**
-     * Removing buses with their registration (eg: ABC-123)
-     *
-     * @param  delta   the amount the value should be incremented by
-     * @return         the post-incremented value
-     */
+###Test
+    Sample test JSON attached to the project
