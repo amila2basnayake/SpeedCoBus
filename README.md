@@ -19,7 +19,7 @@ Application
 
 * Go to the Command Line select the project path and execute 
 ```
-mvn spring-boot:run
+mvn spring-boot:run OR mvnW spring-boot:run
 ```
 Database
 
