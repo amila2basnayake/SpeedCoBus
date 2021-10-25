@@ -7,6 +7,7 @@ import com.abccompany.speedcobussystem.model.dto.LineDto;
 import com.abccompany.speedcobussystem.model.dto.RouteDto;
 import com.abccompany.speedcobussystem.model.dto.StopDto;
 import com.abccompany.speedcobussystem.service.StopService;
+import com.sun.xml.bind.v2.TODO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +28,7 @@ public class StopController {
      */
     @PostMapping
     public ResponseEntity<StopDto> addStopByCode(@RequestBody final StopDto stopDto) {
+        // TODO:code should validate can be multiple
         Stop stop = Stop.valueOf(stopDto);
         return new ResponseEntity<>(StopDto.valueOf(
                 stopService.createStop(stop)), HttpStatus.CREATED);
@@ -36,7 +38,7 @@ public class StopController {
      *   Add Stop with route
      *
      */
-    @PostMapping("/{code}/route/{id}")
+    @PostMapping("/codeid/{code}/route/{id}")
     public ResponseEntity<StopDto> addStopToRoute(@PathVariable("code")  final String code, @PathVariable("id")  final Long id) {
         return new ResponseEntity<>(StopDto.valueOf(stopService.addStopToRoute(code, id)), HttpStatus.CREATED);
     }

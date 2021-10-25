@@ -14,9 +14,6 @@ public class RouteDto {
         RouteDto routeDto = new RouteDto();
         routeDto.setId(route.getId());
         routeDto.setName(route.getName());
-        if (route.getStops() != null && !route.getStops().isEmpty()) {
-            routeDto.setStopDtos(route.getStops().stream().map(StopDto::valueOf).collect(Collectors.toList()));
-        }
         if(route.getLine()!=null) {
             routeDto.setLineDtos(LineDto.valueOf(route.getLine()));
         }

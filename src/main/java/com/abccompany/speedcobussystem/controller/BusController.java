@@ -25,6 +25,7 @@ public class BusController {
     @PostMapping
     public ResponseEntity<BusDto> addBus(@RequestBody final BusDto busDto) {
         Bus bus = Bus.valueOf(busDto);
+        // TODO:code should validate can be multiple
         return new ResponseEntity<>(BusDto.valueOf(
                 busService.createBus(bus)), HttpStatus.CREATED);
     }
