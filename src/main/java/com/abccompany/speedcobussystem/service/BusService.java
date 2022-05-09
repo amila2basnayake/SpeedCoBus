@@ -1,9 +1,8 @@
 package com.abccompany.speedcobussystem.service;
 
 import com.abccompany.speedcobussystem.model.Bus;
-import com.abccompany.speedcobussystem.model.Schedule;
 import com.abccompany.speedcobussystem.repository.BusRepository;
-import com.abccompany.speedcobussystem.service.exception.BusException;
+import com.abccompany.speedcobussystem.exception.BusException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class BusService {
 
     public final BusRepository busRepository;
+
     public BusService(BusRepository busRepository) {
         this.busRepository = busRepository;
     }
@@ -35,7 +35,7 @@ public class BusService {
         return bus;
     }
 
-    private Bus findBusByCode(String code) {
+    public Bus findBusByCode(String code) {
         return busRepository.findBusByCode(code);
     }
 }

@@ -2,7 +2,7 @@ package com.abccompany.speedcobussystem.service;
 
 import com.abccompany.speedcobussystem.model.Route;
 import com.abccompany.speedcobussystem.repository.RouteRepository;
-import com.abccompany.speedcobussystem.service.exception.RouteException;
+import com.abccompany.speedcobussystem.exception.RouteException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

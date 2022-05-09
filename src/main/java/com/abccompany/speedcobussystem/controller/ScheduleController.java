@@ -2,7 +2,6 @@ package com.abccompany.speedcobussystem.controller;
 
 
 import com.abccompany.speedcobussystem.model.Schedule;
-import com.abccompany.speedcobussystem.model.dto.BusDto;
 import com.abccompany.speedcobussystem.model.dto.ScheduleDto;
 import com.abccompany.speedcobussystem.service.ScheduleService;
 import org.springframework.http.HttpStatus;
@@ -28,6 +27,7 @@ public class ScheduleController {
      */
     @PostMapping
     public ResponseEntity<ScheduleDto> timeSchedule(@RequestBody final ScheduleDto scheduleDto) {
+        // TODO: should validate
         Schedule schedule = Schedule.valueOf(scheduleDto);
         return new ResponseEntity<>(ScheduleDto.valueOf(
                 scheduleService.timeSchedule(schedule)), HttpStatus.CREATED);

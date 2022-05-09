@@ -14,6 +14,21 @@ public class LineDto {
     private List<RouteDto> routeDtos;
     private List<ScheduleDto> scheduleDtos = new ArrayList<>();
 
+    public LineDto() {
+    }
+
+    public LineDto(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public LineDto(Long id, String name, List<RouteDto> routeDtos, List<ScheduleDto> scheduleDtos) {
+        this.id = id;
+        this.name = name;
+        this.routeDtos = routeDtos;
+        this.scheduleDtos = scheduleDtos;
+    }
+
     public static LineDto valueOf(Line line) {
         LineDto lineDto = new LineDto();
         lineDto.setId(line.getId());

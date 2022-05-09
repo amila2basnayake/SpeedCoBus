@@ -1,4 +1,4 @@
-package com.abccompany.speedcobussystem.service.exception;
+package com.abccompany.speedcobussystem.exception;
 
 import java.text.MessageFormat;
 

@@ -1,13 +1,8 @@
 package com.abccompany.speedcobussystem.controller;
 
-import com.abccompany.speedcobussystem.model.Bus;
-import com.abccompany.speedcobussystem.model.Route;
 import com.abccompany.speedcobussystem.model.Stop;
-import com.abccompany.speedcobussystem.model.dto.LineDto;
-import com.abccompany.speedcobussystem.model.dto.RouteDto;
 import com.abccompany.speedcobussystem.model.dto.StopDto;
 import com.abccompany.speedcobussystem.service.StopService;
-import com.sun.xml.bind.v2.TODO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -38,8 +33,9 @@ public class StopController {
      *   Add Stop with route
      *
      */
-    @PostMapping("/codeid/{code}/route/{id}")
+    @PostMapping("/{code}/route/{id}")
     public ResponseEntity<StopDto> addStopToRoute(@PathVariable("code")  final String code, @PathVariable("id")  final Long id) {
+        // TODO: should validate
         return new ResponseEntity<>(StopDto.valueOf(stopService.addStopToRoute(code, id)), HttpStatus.CREATED);
     }
 
@@ -49,6 +45,7 @@ public class StopController {
      */
     @DeleteMapping("/{code}")
     public ResponseEntity<StopDto> removeStop(@PathVariable("code") final String code) {
+        // TODO: should validate
         return new ResponseEntity<>(StopDto.valueOf(stopService.removeStopByCode(code)), HttpStatus.OK);
     }
 

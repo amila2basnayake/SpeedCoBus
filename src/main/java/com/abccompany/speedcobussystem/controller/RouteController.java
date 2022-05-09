@@ -1,11 +1,7 @@
 package com.abccompany.speedcobussystem.controller;
 
-import com.abccompany.speedcobussystem.model.Bus;
 import com.abccompany.speedcobussystem.model.Route;
-import com.abccompany.speedcobussystem.model.Stop;
-import com.abccompany.speedcobussystem.model.dto.BusDto;
 import com.abccompany.speedcobussystem.model.dto.RouteDto;
-import com.abccompany.speedcobussystem.model.dto.StopDto;
 import com.abccompany.speedcobussystem.service.RouteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,6 +35,7 @@ public class RouteController {
      */
     @DeleteMapping("/{name}")
     public ResponseEntity<RouteDto> removeRoute(@PathVariable("name") final String name) {
+        // TODO: should check the null value
         return new ResponseEntity<>(RouteDto.valueOf(routeService.removeRouteByName(name)), HttpStatus.OK);
     }
 
